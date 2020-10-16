@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -38,17 +37,81 @@
     }
     </style>
 </head>
-  <body>
 
-  	<a href="/">На главную</a>
+<body style="display: grid; grid-template-rows: auto 1fr auto; grid-template-columns: auto 1fr; height: 100vh; grid-template-areas: 'header header' 'aside content' 'footer footer'">
+    <header style="grid-area: header;">
+        <div style="--p:1rem; --d:flex; --jc:space-between; --ai:center; --bb: 1px solid lightgrey;">
+            <a href="/">
+                <h1 style="--m:0; --lh:0.6; --fs:1rem;">Mystem Javascript</h1>
+            </a>
+            <nav>
+                <ul style="--lis:none; --m:0; --p:0;"><li style="--d:inline; --mr:1rem;">
+                        <a href="/posts/post/">Javascript</a>
+                    </li><li style="--d:inline; --mr:1rem;">
+                        <a href="/posts/post2/">Git</a>
+                    </li></ul>
+            </nav>
+        </div>
+    </header>
+    <aside style="--p:1rem; --minw: 200px; grid-area: aside;">
+        <ul style="--lis:none; --m:0; --p:0;">
+            <li><a href="#zero">0. Нулевой уровень</a></li>
+            <li><a href="#zero2">00. Инструментарий</a></li>
+            <li><a href="#one">I. Базис</a></li>
+            <li><a href="#two">II. Атомы</a></li>
+            <li><a href="#three">III. Компоненты</a></li>
+            <li><a href="#for">IV. Проекты</a></li>
+            <li><a href="#five">V. Развитие</a></li>
+        </ul>
+    </aside>
+    <!--CONTENT-->
+    <main style="grid-area: content; --p:1rem; position:relative; --bl:1px solid lightgrey;">
+        <div style="--pos:absolute; --top:0; --bottom:0; --left:0; --right:0; --p:1rem; --ofy:auto;">
+            <section id="zero">
+<table>
+<thead>
+<tr>
+<th>проблема</th>
+<th>решение</th>
+<th>реализация</th>
+<th>пояснение</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>---</td>
+<td>---</td>
+<td>---</td>
+<td>---</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="zero2">
+<h1>Инструментарий</h1>
+</section>
+<section id="one">
+<h1>Базис</h1>
+</section>
+<section id="two">
+<h1>Атомы</h1>
+</section>
+<section id="three">
+<h1>Компоненты</h1>
+</section>
+<section id="for">
+<h1>Проекты</h1>
+</section>
+<section id="five">
+<h1>Развитие</h1>
+</section>
 
-  	<h2>Mystem</h2>
+        </div>
+    </main>
+    <footer style="--bgc:lightgrey; --ta:center;  grid-area: footer;">
+        <strong>2020 г.</strong>
+    </footer>
+    <!--<img src="/assets/images/i.jpeg">-->
+</body>
 
-	<ul><li><a href="/posts/post/">Javascript</a></li><li><a href="/posts/post2/">Git</a></li></ul>
-
-	<img src="/assets/images/i.jpeg">
-
-    <h1>Javascript</h1>
-
-  </body>
 </html>

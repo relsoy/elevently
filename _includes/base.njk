@@ -3,9 +3,7 @@ title: Mystem
 site_name: name
 site_href: site_href
 site_description: MyStem коротко и ясно о современных веб-технологиях
-
 ---
-
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -45,20 +43,45 @@ site_description: MyStem коротко и ясно о современных в
     }
     </style>
 </head>
-  <body>
 
-  	<a href="/">На главную</a>
+<body style="display: grid; grid-template-rows: auto 1fr auto; grid-template-columns: auto 1fr; height: 100vh; grid-template-areas: 'header header' 'aside content' 'footer footer'">
+    <header style="grid-area: header;">
+        <div style="--p:1rem; --d:flex; --jc:space-between; --ai:center; --bb: 1px solid lightgrey;">
+            <a href="/">
+                <h1 style="--m:0; --lh:0.6; --fs:1rem;">Mystem {{title}}</h1>
+            </a>
+            <nav>
+                <ul style="--lis:none; --m:0; --p:0;">
+                    {%- for post in collections.post -%}
+                    <li style="--d:inline; --mr:1rem;">
+                        <a href="{{ post.url }}">{{ post.data.title }}</a>
+                    </li>
+                    {%- endfor -%}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <aside style="--p:1rem; --minw: 200px; grid-area: aside;">
+        <ul style="--lis:none; --m:0; --p:0;">
+            <li><a href="#zero">0. Нулевой уровень</a></li>
+            <li><a href="#zero2">00. Инструментарий</a></li>
+            <li><a href="#one">I. Базис</a></li>
+            <li><a href="#two">II. Атомы</a></li>
+            <li><a href="#three">III. Компоненты</a></li>
+            <li><a href="#for">IV. Проекты</a></li>
+            <li><a href="#five">V. Развитие</a></li>
+        </ul>
+    </aside>
+    <!--CONTENT-->
+    <main style="grid-area: content; --p:1rem; position:relative; --bl:1px solid lightgrey;">
+        <div style="--pos:absolute; --top:0; --bottom:0; --left:0; --right:0; --p:1rem; --ofy:auto;">
+            {{ content | safe }}
+        </div>
+    </main>
+    <footer style="--bgc:lightgrey; --ta:center;  grid-area: footer;">
+        <strong>2020 г.</strong>
+    </footer>
+    <!--<img src="{{ '/assets/images/i.jpeg' | url }}">-->
+</body>
 
-  	<h2>Mystem HELLO</h2>
-
-	<ul>
-	{%- for post in collections.post -%}
-	  <li><a href="{{ post.url }}">{{ post.data.title }}</a></li>
-	{%- endfor -%}
-	</ul>
-
-	<img src="{{ '/assets/images/i.jpeg' | url }}">
-
-    {{ content | safe }}
-  </body>
 </html>
