@@ -2,15 +2,14 @@
 layout: base.njk
 tags: post
 title: Javascript
+
+
+
+
 ---
 
 <section id="zero">
-
-|проблема|решение|реализация|пояснение|
-|---|---|---|---|
-|---|---|---|---|
-
-
+# Инструментарий
 
 </section>
 
